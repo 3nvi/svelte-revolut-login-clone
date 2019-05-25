@@ -1,12 +1,11 @@
-import App from './App.svelte';
+import App from 'App';
 
 const app = new App({
-	target: document.body,
-	props: {
-		name: 'world'
-	}
+  target: document.body,
 });
 
-window.app = app;
+if (process.env.NODE_ENV === 'development') {
+  window.app = app;
+}
 
 export default app;
